@@ -1,0 +1,21 @@
+{
+  "name": "packagexml-diff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "packagexml-diff.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mikkel Flindt Heisterberg, mheisterberg@salesforce.com",
+  "license": "MIT",
+  "dependencies": {
+    "command-line-args": "^5.0.2",
+    "command-line-usage": "^5.0.5",
+    "diff": "^3.5.0",
+    "line-number": "^0.1.0",
+    "line-replace": "^1.0.2",
+    "sfdx-bulk-helper": "0.0.10",
+    "tmp": "0.0.33",
+    "unzip2": "^0.2.5"
+  }
+}
