@@ -17,7 +17,8 @@
                 "--packagexml",
                 "debug/package.xml",
                 "--verbose",
-                "--sfdx-verbose"
+                "--save-packagexml",
+                "diff"
             ]
         }
     ]

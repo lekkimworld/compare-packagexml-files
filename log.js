@@ -1,11 +1,21 @@
-
-const log = (level, msg, err) => {
-    const strlevel = level === 'debug' ? 'DEBUG' : level === 'info' ? 'INFO' : 'ERROR'
-    err ? console.log(`${strlevel} - ${msg}`, err) : console.log(`${strlevel} - ${msg}`)
+/**
+ * Simple logger class that simply writes to console.log with a prefix. Verbose logging 
+ * can be turned on using the argument to the constructor if the supplied argument 
+ * coerses to true.
+ * 
+ * @param {any} verbose 
+ */
+function Logger(verbose) {
+    this._verbose = verbose
 }
-const logobj = Object.freeze({
-    debug: (msg) => log('debug', msg),
-    info: (msg) => log('info', msg),
-    error: (msg, err) => log('error ', msg, err)
-})
-module.exports = logobj
+Logger.prototype.verbose = function(msg) {
+    if (this._verbose) console.log(`VERBOSE - ${msg}`)
+}
+Logger.prototype.error = function(msg) {
+    console.log(`ERROR - ${msg}`)
+}
+Logger.prototype.info = function(msg) {
+    console.log(`INFO - ${msg}`)
+}
+
+module.exports = Logger
