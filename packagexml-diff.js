@@ -156,11 +156,11 @@ Promise.all([sharedContext.sfdx1.ensureOrgConnected(), sharedContext.sfdx2.ensur
             const promises = []
             if (lineNoResult1 && lineNoResult1.length === 1) {
                 log.verbose(`Removing line ${lineNoResult1[0].number} in package.xml from org1`)
-                promises.push(lineRemove(path.join(sharedContext.tmpdir1, DEFAULT_PACKAGEXML), lineNoResult1[0].number))
+                promises.push(lineRemove(utils.getPackageXMLPath(options, sharedContext.tmpdir1), lineNoResult1[0].number))
             }
             if (lineNoResult2 && lineNoResult2.length === 1) {
                 log.verbose(`Removing line ${lineNoResult2[0].number} in package.xml from org2`)
-                promises.push(lineRemove(path.join(sharedContext.tmpdir2, DEFAULT_PACKAGEXML), lineNoResult2[0].number))
+                promises.push(lineRemove(utils.getPackageXMLPath(options, sharedContext.tmpdir2), lineNoResult2[0].number))
             }
             return Promise.all(promises)
         }).then(() => {
